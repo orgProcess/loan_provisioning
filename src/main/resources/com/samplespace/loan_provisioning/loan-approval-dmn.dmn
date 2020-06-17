@@ -58,7 +58,7 @@
           <dmn:text>&lt; 300000</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_60983362-8005-428C-9065-4E3D1755CAB5">
-          <dmn:text>=&lt; 7</dmn:text>
+          <dmn:text>7</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_B8D32F59-E7BE-41F4-AEC9-238BECB357D5">
           <dmn:text>0.47</dmn:text>
@@ -69,7 +69,7 @@
           <dmn:text>[300000..600000]</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_136E543B-19AD-4A22-8CD3-50F624017EA8">
-          <dmn:text>=&lt; 7</dmn:text>
+          <dmn:text>7</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_2722A0F2-9BDC-4C1C-A019-AFC9CAFAF0B5">
           <dmn:text>0.70</dmn:text>
@@ -80,7 +80,7 @@
           <dmn:text>&gt; 600000</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_6F3C95E3-1959-46D6-9D14-A8FE77CFE662">
-          <dmn:text>=&lt; 7</dmn:text>
+          <dmn:text>7</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_D0E46247-8305-468F-A684-27478541925C">
           <dmn:text>0.98</dmn:text>
