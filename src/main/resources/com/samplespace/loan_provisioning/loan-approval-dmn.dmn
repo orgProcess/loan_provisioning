@@ -1,6 +1,36 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_0D6F2EAB-6552-474E-8E6B-DFB222F4877B" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_80BB9897-8FDB-4806-A61C-281D5F7A2FE9" name="loan-approval-dmn" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_0D6F2EAB-6552-474E-8E6B-DFB222F4877B">
   <dmn:extensionElements/>
+  <dmn:itemDefinition id="_702D34A4-79C5-454C-8F02-A3D6666066DE" name="loanPreApproval" isCollection="false">
+    <dmn:itemComponent id="_FB4C92B7-E51F-4215-8049-94F084FE47C2" name="reason" isCollection="true">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_FDA4A997-3042-4BA7-B327-36522122F5A8" name="preApproval" isCollection="false">
+      <dmn:typeRef>boolean</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_CA3AD7B8-B4E9-4D08-B9C9-611FFD692802" name="Applicant" isCollection="false">
+    <dmn:itemComponent id="_038394A2-A4B6-4B1F-8EC0-D44088FC620B" name="monthlyIncome" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_A96835E1-2795-4B1D-81A0-34AF45AF8E0B" name="age" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_0B8085A6-9FCE-4EB4-A1AE-46B2F36473BC" name="name" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_29DC793D-7610-49F5-8E37-C6A32019371A" name="creditScore" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_AF82D5F2-619F-459B-97E9-7C876457E7FE" name="Loan" isCollection="false">
+    <dmn:itemComponent id="_DECFA830-5BED-4A57-99F3-C88B9E57AC3C" name="amount" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_72509E8C-806B-455A-A4FB-E335F7F53175" name="duration" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <di:extension>
