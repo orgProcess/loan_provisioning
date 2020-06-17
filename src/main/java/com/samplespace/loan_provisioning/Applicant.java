@@ -6,12 +6,58 @@ package com.samplespace.loan_provisioning;
 
 public class Applicant implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Applicant() {
-    }
+	@org.kie.api.definition.type.Label(value = "Age")
+	private java.lang.String age;
+	@org.kie.api.definition.type.Label(value = "Credit Score")
+	private int creditScore;
+	@org.kie.api.definition.type.Label(value = "Monthly Income")
+	private int monthlyIncome;
+	@org.kie.api.definition.type.Label(value = "Name")
+	private java.lang.String name;
 
+	public Applicant() {
+	}
 
+	public java.lang.String getAge() {
+		return this.age;
+	}
 
+	public void setAge(java.lang.String age) {
+		this.age = age;
+	}
+
+	public int getCreditScore() {
+		return this.creditScore;
+	}
+
+	public void setCreditScore(int creditScore) {
+		this.creditScore = creditScore;
+	}
+
+	public int getMonthlyIncome() {
+		return this.monthlyIncome;
+	}
+
+	public void setMonthlyIncome(int monthlyIncome) {
+		this.monthlyIncome = monthlyIncome;
+	}
+
+	public java.lang.String getName() {
+		return this.name;
+	}
+
+	public void setName(java.lang.String name) {
+		this.name = name;
+	}
+
+	public Applicant(java.lang.String age, int creditScore, int monthlyIncome,
+			java.lang.String name) {
+		this.age = age;
+		this.creditScore = creditScore;
+		this.monthlyIncome = monthlyIncome;
+		this.name = name;
+	}
 
 }
