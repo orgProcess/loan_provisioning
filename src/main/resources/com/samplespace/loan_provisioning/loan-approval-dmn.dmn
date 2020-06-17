@@ -38,6 +38,88 @@
   <dmn:decision id="_5C9B5704-909D-43B8-98B5-96A0E7E3C1E6" name="Interest Rate">
     <dmn:extensionElements/>
     <dmn:variable id="_A52B2676-4946-44DE-B86A-A9464790753B" name="Interest Rate" typeRef="number"/>
+    <dmn:informationRequirement id="_B670FDFA-86A5-4FFE-9E33-7AF2517A808E">
+      <dmn:requiredInput href="#_C4CCF718-5432-4418-BBB4-5A3C3F1CEA15"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_91A3575F-9525-4674-A51D-426ECEA58E75" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_DAA4566F-61BA-4E96-934B-D3772FC6A0C9">
+        <dmn:inputExpression id="_5E5173CD-77DA-4028-B212-04B5B9C0B8BB" typeRef="number">
+          <dmn:text>Loan.amount</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_3A4447DC-9A36-491B-824E-5AA14D6E6324">
+        <dmn:inputExpression id="_905BCE1A-7D87-4B29-B783-833FCA31224E" typeRef="number">
+          <dmn:text>Loan.duration</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_18FADEA9-D652-43CF-B1BF-0E2C8A9DE742" typeRef="number"/>
+      <dmn:rule id="_F88A9F8C-6F0B-4BD8-BD0F-F33167B852D7">
+        <dmn:inputEntry id="_A056018E-E7F4-4DFA-AB89-924A7E1479CB">
+          <dmn:text>&gt; 300000</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_60983362-8005-428C-9065-4E3D1755CAB5">
+          <dmn:text>7</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_B8D32F59-E7BE-41F4-AEC9-238BECB357D5">
+          <dmn:text>0.47</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_6A962995-6A9A-4E9A-9DC1-0D3468913684">
+        <dmn:inputEntry id="_8C29DBAB-2119-4583-A215-BAB6C98D2F90">
+          <dmn:text>[300000..600000]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_136E543B-19AD-4A22-8CD3-50F624017EA8">
+          <dmn:text>7</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_2722A0F2-9BDC-4C1C-A019-AFC9CAFAF0B5">
+          <dmn:text>0.70</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_05699593-822D-464D-AC0C-9FD0CAED2C2E">
+        <dmn:inputEntry id="_3D709EE3-9F1C-4E8F-AA23-5E909AA46D3D">
+          <dmn:text>&gt; 600000</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_6F3C95E3-1959-46D6-9D14-A8FE77CFE662">
+          <dmn:text>7</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_D0E46247-8305-468F-A684-27478541925C">
+          <dmn:text>0.98</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_8B4C7F39-8098-464C-8402-9C67FE19E4D2">
+        <dmn:inputEntry id="_E44B53B1-272A-4FDB-94C9-26A576E392E0">
+          <dmn:text>&lt; 300000</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_D5584473-4244-4E6E-B0E5-CD22433FDC6C">
+          <dmn:text>&gt; 7</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_00FFB137-2F42-471C-B814-3651A25633D1">
+          <dmn:text>1.45</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_A1CF35DC-76E4-43E8-AC3F-5C288C62283F">
+        <dmn:inputEntry id="_CE3F0DF5-A36C-4C70-80AE-135759120DBC">
+          <dmn:text>[300000..600000]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_BD1393D9-411E-4C2E-930B-EF7CB1855CF2">
+          <dmn:text>&gt; 7</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_864E0BCC-2CF3-451A-A97B-E91F0B71AAF9">
+          <dmn:text>1.65</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_2DCBAB54-A52B-4725-8A7C-B8CF9BD381C0">
+        <dmn:inputEntry id="_7071FDB6-4016-444F-B504-73B42A3BE2F5">
+          <dmn:text>&gt; 600000</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_691A8AAD-BF45-46A5-A73B-F2A0FE69D017">
+          <dmn:text>&gt; 7</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_2E6776A5-EB1D-49E4-8B36-41F9384ECC03">
+          <dmn:text>1.85</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
   </dmn:decision>
   <dmn:businessKnowledgeModel id="_99F7BA82-BC87-46BB-B918-B3439008CECB" name="Debt to Income">
     <dmn:extensionElements/>
@@ -72,6 +154,13 @@
     <dmndi:DMNDiagram>
       <di:extension>
         <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_91A3575F-9525-4674-A51D-426ECEA58E75">
+            <kie:width>50.0</kie:width>
+            <kie:width>230.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_62256525-36D1-4293-ABF4-4664DA40407D"/>
           <kie:ComponentWidths dmnElementRef="_3EFE7AED-080C-43B6-8387-414FAA26A469"/>
         </kie:ComponentsWidthsExtension>
@@ -121,6 +210,10 @@
         <dc:Bounds x="738" y="97" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_B670FDFA-86A5-4FFE-9E33-7AF2517A808E" dmnElementRef="_B670FDFA-86A5-4FFE-9E33-7AF2517A808E">
+        <di:waypoint x="519.2990654205607" y="437"/>
+        <di:waypoint x="679" y="438"/>
+      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_29BB4776-E625-4039-A8BD-54085B7C1C8B" dmnElementRef="_29BB4776-E625-4039-A8BD-54085B7C1C8B">
         <di:waypoint x="519.2990654205607" y="437"/>
         <di:waypoint x="520" y="147"/>
