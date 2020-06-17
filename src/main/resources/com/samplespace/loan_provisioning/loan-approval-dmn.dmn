@@ -58,7 +58,7 @@
           <dmn:text>&lt; 300000</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_60983362-8005-428C-9065-4E3D1755CAB5">
-          <dmn:text>7</dmn:text>
+          <dmn:text>=&lt; 7</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_B8D32F59-E7BE-41F4-AEC9-238BECB357D5">
           <dmn:text>0.47</dmn:text>
