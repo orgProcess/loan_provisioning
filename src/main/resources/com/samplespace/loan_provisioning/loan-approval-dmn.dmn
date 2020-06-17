@@ -33,7 +33,7 @@
   </dmn:itemDefinition>
   <dmn:inputData id="_D57E96B6-D7D3-4331-A51D-F0082355C433" name="Applicant">
     <dmn:extensionElements/>
-    <dmn:variable id="_9213D320-A5B4-4664-AFB5-B418A59D5251" name="Applicant"/>
+    <dmn:variable id="_9213D320-A5B4-4664-AFB5-B418A59D5251" name="Applicant" typeRef="Applicant"/>
   </dmn:inputData>
   <dmn:businessKnowledgeModel id="_99F7BA82-BC87-46BB-B918-B3439008CECB" name="Debt to Income">
     <dmn:extensionElements/>
