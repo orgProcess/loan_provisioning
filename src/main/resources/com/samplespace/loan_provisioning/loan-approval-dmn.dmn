@@ -55,7 +55,7 @@
       <dmn:output id="_18FADEA9-D652-43CF-B1BF-0E2C8A9DE742" typeRef="number"/>
       <dmn:rule id="_F88A9F8C-6F0B-4BD8-BD0F-F33167B852D7">
         <dmn:inputEntry id="_A056018E-E7F4-4DFA-AB89-924A7E1479CB">
-          <dmn:text>&gt; 300000</dmn:text>
+          <dmn:text>&lt; 300000</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_60983362-8005-428C-9065-4E3D1755CAB5">
           <dmn:text>7</dmn:text>
