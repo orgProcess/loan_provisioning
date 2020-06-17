@@ -213,7 +213,7 @@
             <dmn:text>Debt to Income</dmn:text>
           </dmn:literalExpression>
           <dmn:binding>
-            <dmn:parameter id="_3E0E43F7-F20C-4982-BCE5-B0FCCDB392B7" name="lonAmount" typeRef="number"/>
+            <dmn:parameter id="_3E0E43F7-F20C-4982-BCE5-B0FCCDB392B7" name="loanAmount" typeRef="number"/>
             <dmn:literalExpression id="_5565D50E-E28D-4C7C-B5BC-3A6E112E2B48">
               <dmn:text>Loan.amount </dmn:text>
             </dmn:literalExpression>
