@@ -231,7 +231,7 @@
             </dmn:literalExpression>
           </dmn:binding>
           <dmn:binding>
-            <dmn:parameter id="_C2F937E2-8EBA-456A-AA98-0731BCA5D038" name="montlyIncome" typeRef="number"/>
+            <dmn:parameter id="_C2F937E2-8EBA-456A-AA98-0731BCA5D038" name="monthlyIncome" typeRef="number"/>
             <dmn:literalExpression id="_2D83EBC5-2EB9-46F8-970C-13F6DA7ADE11">
               <dmn:text>Applicant.monthlyIncome   </dmn:text>
             </dmn:literalExpression>
