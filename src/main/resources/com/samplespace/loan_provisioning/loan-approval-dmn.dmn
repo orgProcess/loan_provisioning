@@ -35,29 +35,6 @@
     <dmn:extensionElements/>
     <dmn:variable id="_9213D320-A5B4-4664-AFB5-B418A59D5251" name="Applicant" typeRef="Applicant"/>
   </dmn:inputData>
-  <dmn:businessKnowledgeModel id="_99F7BA82-BC87-46BB-B918-B3439008CECB" name="Debt to Income">
-    <dmn:extensionElements/>
-    <dmn:variable id="_20DB2904-EC4B-4057-99B2-1DE66DA44A1A" name="Debt to Income" typeRef="number"/>
-    <dmn:encapsulatedLogic id="_3EFE7AED-080C-43B6-8387-414FAA26A469" kind="FEEL">
-      <dmn:formalParameter id="_4FC3D0ED-DFB7-4317-9F63-DCFB1251D9F9" name="loanAmount" typeRef="number"/>
-      <dmn:formalParameter id="_A654412B-7A96-482B-94A8-5F4E7C6F41CC" name="loanDuration" typeRef="number"/>
-      <dmn:formalParameter id="_0236D6FC-99AF-4CFD-9BDF-23063543153A" name="monthlyIncome" typeRef="number"/>
-      <dmn:formalParameter id="_E8DFBC72-A7C2-4CDF-BF55-5A2B047133F3" name="interestRate" typeRef="number"/>
-      <dmn:context id="_F0669A88-D57B-4E13-970A-D639FD5E432C">
-        <dmn:contextEntry>
-          <dmn:variable id="_2DA91771-3C76-4CDC-844C-63925D0DE537" name="Monthly Repayment" typeRef="number"/>
-          <dmn:literalExpression id="_F9E304A6-8701-4579-87AB-56A276138817">
-            <dmn:text>((interestRate * loanAmount / 100) + loanAmount) / (loanDuration * 12)</dmn:text>
-          </dmn:literalExpression>
-        </dmn:contextEntry>
-        <dmn:contextEntry>
-          <dmn:literalExpression id="_422BF2D5-B568-4DD6-A20B-28F0AB79E26F">
-            <dmn:text>(Monthly Repayment / monthlyIncome) * 100</dmn:text>
-          </dmn:literalExpression>
-        </dmn:contextEntry>
-      </dmn:context>
-    </dmn:encapsulatedLogic>
-  </dmn:businessKnowledgeModel>
   <dmn:decision id="_5C9B5704-909D-43B8-98B5-96A0E7E3C1E6" name="Interest Rate">
     <dmn:extensionElements/>
     <dmn:variable id="_A52B2676-4946-44DE-B86A-A9464790753B" name="Interest Rate" typeRef="number"/>
@@ -144,6 +121,29 @@
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
+  <dmn:businessKnowledgeModel id="_99F7BA82-BC87-46BB-B918-B3439008CECB" name="Debt to Income">
+    <dmn:extensionElements/>
+    <dmn:variable id="_20DB2904-EC4B-4057-99B2-1DE66DA44A1A" name="Debt to Income" typeRef="number"/>
+    <dmn:encapsulatedLogic id="_3EFE7AED-080C-43B6-8387-414FAA26A469" kind="FEEL">
+      <dmn:formalParameter id="_4FC3D0ED-DFB7-4317-9F63-DCFB1251D9F9" name="loanAmount" typeRef="number"/>
+      <dmn:formalParameter id="_A654412B-7A96-482B-94A8-5F4E7C6F41CC" name="loanDuration" typeRef="number"/>
+      <dmn:formalParameter id="_0236D6FC-99AF-4CFD-9BDF-23063543153A" name="monthlyIncome" typeRef="number"/>
+      <dmn:formalParameter id="_E8DFBC72-A7C2-4CDF-BF55-5A2B047133F3" name="interestRate" typeRef="number"/>
+      <dmn:context id="_F0669A88-D57B-4E13-970A-D639FD5E432C">
+        <dmn:contextEntry>
+          <dmn:variable id="_2DA91771-3C76-4CDC-844C-63925D0DE537" name="Monthly Repayment" typeRef="number"/>
+          <dmn:literalExpression id="_F9E304A6-8701-4579-87AB-56A276138817">
+            <dmn:text>((interestRate * loanAmount / 100) + loanAmount) / (loanDuration * 12)</dmn:text>
+          </dmn:literalExpression>
+        </dmn:contextEntry>
+        <dmn:contextEntry>
+          <dmn:literalExpression id="_422BF2D5-B568-4DD6-A20B-28F0AB79E26F">
+            <dmn:text>(Monthly Repayment / monthlyIncome) * 100</dmn:text>
+          </dmn:literalExpression>
+        </dmn:contextEntry>
+      </dmn:context>
+    </dmn:encapsulatedLogic>
+  </dmn:businessKnowledgeModel>
   <dmn:decision id="_560FF7DD-051E-4EF4-B675-1E55985DD30B" name="PreQualification">
     <dmn:extensionElements/>
     <dmn:variable id="_7C464708-F0E9-4AF1-9402-E255F9F997B9" name="PreQualification" typeRef="loanPreApproval"/>
@@ -288,6 +288,13 @@
     <dmndi:DMNDiagram>
       <di:extension>
         <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_91A3575F-9525-4674-A51D-426ECEA58E75">
+            <kie:width>50.0</kie:width>
+            <kie:width>230.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_F0669A88-D57B-4E13-970A-D639FD5E432C">
             <kie:width>50.0</kie:width>
             <kie:width>194.0</kie:width>
@@ -302,13 +309,6 @@
           <kie:ComponentWidths dmnElementRef="_3EFE7AED-080C-43B6-8387-414FAA26A469">
             <kie:width>50.0</kie:width>
             <kie:width>903.0</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_91A3575F-9525-4674-A51D-426ECEA58E75">
-            <kie:width>50.0</kie:width>
-            <kie:width>230.0</kie:width>
-            <kie:width>100.0</kie:width>
-            <kie:width>100.0</kie:width>
-            <kie:width>100.0</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_B782644E-00B3-450C-86BC-41F22D5929B7">
             <kie:width>50.0</kie:width>
@@ -374,15 +374,6 @@
         <dc:Bounds x="255" y="400" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-_99F7BA82-BC87-46BB-B918-B3439008CECB" dmnElementRef="_99F7BA82-BC87-46BB-B918-B3439008CECB" isCollapsed="false">
-        <dmndi:DMNStyle>
-          <dmndi:FillColor red="255" green="255" blue="255"/>
-          <dmndi:StrokeColor red="0" green="0" blue="0"/>
-          <dmndi:FontColor red="0" green="0" blue="0"/>
-        </dmndi:DMNStyle>
-        <dc:Bounds x="697" y="146.68421052631578" width="100" height="50"/>
-        <dmndi:DMNLabel/>
-      </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_5C9B5704-909D-43B8-98B5-96A0E7E3C1E6" dmnElementRef="_5C9B5704-909D-43B8-98B5-96A0E7E3C1E6" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
@@ -390,6 +381,15 @@
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
         <dc:Bounds x="642" y="399" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_99F7BA82-BC87-46BB-B918-B3439008CECB" dmnElementRef="_99F7BA82-BC87-46BB-B918-B3439008CECB" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="696" y="147.68421052631578" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_560FF7DD-051E-4EF4-B675-1E55985DD30B" dmnElementRef="_560FF7DD-051E-4EF4-B675-1E55985DD30B" isCollapsed="false">
@@ -427,7 +427,7 @@
         <di:waypoint x="488" y="198"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_1E35B093-E32F-4854-9C28-A5EA991837D6" dmnElementRef="_1E35B093-E32F-4854-9C28-A5EA991837D6">
-        <di:waypoint x="747" y="171.68421052631578"/>
+        <di:waypoint x="746" y="172.68421052631578"/>
         <di:waypoint x="544" y="173"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
