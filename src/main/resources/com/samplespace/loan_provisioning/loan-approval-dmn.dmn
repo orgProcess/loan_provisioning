@@ -207,7 +207,7 @@
         </dmn:decisionTable>
       </dmn:contextEntry>
       <dmn:contextEntry>
-        <dmn:variable id="_53A6589E-23A2-49BB-84C1-D9DF94CE2D99" name="Debt Ration" typeRef="number"/>
+        <dmn:variable id="_53A6589E-23A2-49BB-84C1-D9DF94CE2D99" name="Debt Ratio" typeRef="number"/>
         <dmn:invocation id="_64E13047-7F74-4EEA-98A6-CF53751344C1">
           <dmn:literalExpression id="_D9875FF0-1E70-4C99-8928-D8AF9CF85B52">
             <dmn:text></dmn:text>
