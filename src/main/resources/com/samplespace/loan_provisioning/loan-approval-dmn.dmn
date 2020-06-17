@@ -264,13 +264,13 @@
       <dmn:contextEntry>
         <dmn:variable id="_4605DBAB-CAB3-4382-BCFA-BB1AC96915FA" name="preApprovalStatus" typeRef="boolean"/>
         <dmn:literalExpression id="_7A65C1DC-F1CA-4D36-B137-4EC8BA55F6CB">
-          <dmn:text>all(Age Eligibility.preApproval, Credit Check.preApproval, Debt Ration Check.preApproval)   </dmn:text>
+          <dmn:text>all(Age Eligibility.preApproval, Credit Check.preApproval, Debt Ratio Check.preApproval)   </dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
       <dmn:contextEntry>
         <dmn:variable id="_21B8F430-0928-431D-BAA6-38704759FA5E" name="reasonList" typeRef="string"/>
         <dmn:literalExpression id="_B3C48812-A1E5-44FB-9E8C-772E97808FF9">
-          <dmn:text>union(Age Eligibility.reason, Credit Check.reason, Debt Ration Check.reason)</dmn:text>
+          <dmn:text>union(Age Eligibility.reason, Credit Check.reason, Debt Ratio Check.reason)</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
       <dmn:contextEntry>
