@@ -6,12 +6,35 @@ package com.samplespace.loan_provisioning;
 
 public class Loan implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Loan() {
-    }
+	@org.kie.api.definition.type.Label(value = "Amount")
+	private double amount;
+	@org.kie.api.definition.type.Label(value = "Duration")
+	private int duration;
 
+	public Loan() {
+	}
 
+	public double getAmount() {
+		return this.amount;
+	}
 
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public int getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
+	public Loan(double amount, int duration) {
+		this.amount = amount;
+		this.duration = duration;
+	}
 
 }
