@@ -33,15 +33,15 @@
   </dmn:itemDefinition>
   <dmn:inputData id="_D57E96B6-D7D3-4331-A51D-F0082355C433" name="Applicant">
     <dmn:extensionElements/>
-    <dmn:variable id="_9213D320-A5B4-4664-AFB5-B418A59D5251" name="Applicant"/>
+    <dmn:variable id="_9213D320-A5B4-4664-AFB5-B418A59D5251" name="Applicant" typeRef="Applicant"/>
   </dmn:inputData>
   <dmn:decision id="_5C9B5704-909D-43B8-98B5-96A0E7E3C1E6" name="Interest Rate">
     <dmn:extensionElements/>
-    <dmn:variable id="_A52B2676-4946-44DE-B86A-A9464790753B" name="Interest Rate"/>
+    <dmn:variable id="_A52B2676-4946-44DE-B86A-A9464790753B" name="Interest Rate" typeRef="number"/>
   </dmn:decision>
   <dmn:businessKnowledgeModel id="_99F7BA82-BC87-46BB-B918-B3439008CECB" name="Debt to Income">
     <dmn:extensionElements/>
-    <dmn:variable id="_20DB2904-EC4B-4057-99B2-1DE66DA44A1A" name="Debt to Income"/>
+    <dmn:variable id="_20DB2904-EC4B-4057-99B2-1DE66DA44A1A" name="Debt to Income" typeRef="number"/>
     <dmn:encapsulatedLogic id="_3EFE7AED-080C-43B6-8387-414FAA26A469" kind="FEEL">
       <dmn:literalExpression id="_62256525-36D1-4293-ABF4-4664DA40407D">
         <dmn:text></dmn:text>
@@ -50,7 +50,7 @@
   </dmn:businessKnowledgeModel>
   <dmn:decision id="_560FF7DD-051E-4EF4-B675-1E55985DD30B" name="PreQualification">
     <dmn:extensionElements/>
-    <dmn:variable id="_7C464708-F0E9-4AF1-9402-E255F9F997B9" name="PreQualification"/>
+    <dmn:variable id="_7C464708-F0E9-4AF1-9402-E255F9F997B9" name="PreQualification" typeRef="loanPreApproval"/>
     <dmn:informationRequirement id="_29BB4776-E625-4039-A8BD-54085B7C1C8B">
       <dmn:requiredInput href="#_C4CCF718-5432-4418-BBB4-5A3C3F1CEA15"/>
     </dmn:informationRequirement>
@@ -66,7 +66,7 @@
   </dmn:decision>
   <dmn:inputData id="_C4CCF718-5432-4418-BBB4-5A3C3F1CEA15" name="Loan">
     <dmn:extensionElements/>
-    <dmn:variable id="_F821889E-E11B-4923-BA03-5FEE1E2AB70D" name="Loan"/>
+    <dmn:variable id="_F821889E-E11B-4923-BA03-5FEE1E2AB70D" name="Loan" typeRef="Loan"/>
   </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
