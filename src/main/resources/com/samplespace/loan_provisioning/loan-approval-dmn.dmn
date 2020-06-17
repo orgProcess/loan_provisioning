@@ -159,6 +159,86 @@
     <dmn:knowledgeRequirement id="_1E35B093-E32F-4854-9C28-A5EA991837D6">
       <dmn:requiredKnowledge href="#_99F7BA82-BC87-46BB-B918-B3439008CECB"/>
     </dmn:knowledgeRequirement>
+    <dmn:context id="_B782644E-00B3-450C-86BC-41F22D5929B7">
+      <dmn:contextEntry>
+        <dmn:variable id="_4F8757D0-699E-4961-B8D2-291DD1BF2361" name="Age Eligibility" typeRef="loanPreApproval"/>
+        <dmn:decisionTable id="_1904EE5B-E6DA-4756-AC07-F70EC4764987" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+          <dmn:input id="_CF2D6DB7-CDA9-4CD5-95C3-54A550EE9C70">
+            <dmn:inputExpression id="_B8787E72-7591-4B11-A9CD-94531C14BDE9" typeRef="number">
+              <dmn:text>Applicant.age</dmn:text>
+            </dmn:inputExpression>
+          </dmn:input>
+          <dmn:output id="_1D6ED79F-28E9-494E-82D9-80EDEF98DE17" name="preApproval" typeRef="boolean"/>
+          <dmn:output id="_52BDE848-D7C4-4A07-9F2B-07D3A6B122D7" name="reason" typeRef="string"/>
+          <dmn:rule id="_B8431D9E-58F0-4401-8468-6B83F726C81E">
+            <dmn:inputEntry id="_E0B8FD16-7468-4CDD-8913-2F2E7479C2A4">
+              <dmn:text>not ([18..70])</dmn:text>
+            </dmn:inputEntry>
+            <dmn:outputEntry id="_D1548015-96D1-4DAB-9852-545FA0FD086D">
+              <dmn:text>false</dmn:text>
+            </dmn:outputEntry>
+            <dmn:outputEntry id="_EDDADBAF-E22B-4BC4-8907-813CD5365F6C">
+              <dmn:text>"Age not valid"</dmn:text>
+            </dmn:outputEntry>
+          </dmn:rule>
+        </dmn:decisionTable>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_F9FDD23C-6615-48A1-BFD5-7EC02D015310" name="Credit Check" typeRef="loanPreApproval"/>
+        <dmn:decisionTable id="_E4D7F5B8-CDB3-4F3F-8DF2-DADAA67341F6" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+          <dmn:input id="_01A4DAC7-C8EA-4A76-B30A-7EDC83D81313">
+            <dmn:inputExpression id="_E6DFEDD4-A731-43F7-BEEB-0596CE5A50F2" typeRef="number">
+              <dmn:text>Applicant.creditScore</dmn:text>
+            </dmn:inputExpression>
+          </dmn:input>
+          <dmn:output id="_D17876C9-B5E8-496D-85E1-9F9ED0D45784" name="preApproval" typeRef="boolean"/>
+          <dmn:output id="_031AE2ED-4480-48E4-BBCA-21DFFA954E4E" name="reason" typeRef="string"/>
+          <dmn:rule id="_7C9CADBE-895F-4540-8541-DB743E9157BE">
+            <dmn:inputEntry id="_2AC5A9D8-1CD7-42D4-95F5-7D77BC78234A">
+              <dmn:text>&lt; 300</dmn:text>
+            </dmn:inputEntry>
+            <dmn:outputEntry id="_16A7C046-0ECC-4B5D-8075-3F834BD18973">
+              <dmn:text>false</dmn:text>
+            </dmn:outputEntry>
+            <dmn:outputEntry id="_46823620-CB6C-48A2-AFFE-8FE6BD7A3A55">
+              <dmn:text>"Credit too low"</dmn:text>
+            </dmn:outputEntry>
+          </dmn:rule>
+        </dmn:decisionTable>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_53A6589E-23A2-49BB-84C1-D9DF94CE2D99" name="Debt Ration" typeRef="number"/>
+        <dmn:invocation id="_64E13047-7F74-4EEA-98A6-CF53751344C1">
+          <dmn:literalExpression id="_D9875FF0-1E70-4C99-8928-D8AF9CF85B52">
+            <dmn:text></dmn:text>
+          </dmn:literalExpression>
+          <dmn:binding>
+            <dmn:parameter id="_3E0E43F7-F20C-4982-BCE5-B0FCCDB392B7" name="lonAmount" typeRef="number"/>
+            <dmn:literalExpression id="_5565D50E-E28D-4C7C-B5BC-3A6E112E2B48">
+              <dmn:text>Loan.amount </dmn:text>
+            </dmn:literalExpression>
+          </dmn:binding>
+          <dmn:binding>
+            <dmn:parameter id="_CDC8A94A-0ABC-4F8E-9B99-6B987F6AE44A" name="loanDuration" typeRef="number"/>
+            <dmn:literalExpression id="_383E4FF0-AD62-4606-836D-93FA8C7DACA3">
+              <dmn:text>Loan.duration   </dmn:text>
+            </dmn:literalExpression>
+          </dmn:binding>
+          <dmn:binding>
+            <dmn:parameter id="_64FF203C-1A31-4628-8E8D-560945817503" name="interestRate" typeRef="number"/>
+            <dmn:literalExpression id="_93F58AD3-1D56-4898-A70B-E59A471E7A26">
+              <dmn:text>Interest Rate   </dmn:text>
+            </dmn:literalExpression>
+          </dmn:binding>
+          <dmn:binding>
+            <dmn:parameter id="_C2F937E2-8EBA-456A-AA98-0731BCA5D038" name="montlyIncome" typeRef="number"/>
+            <dmn:literalExpression id="_2D83EBC5-2EB9-46F8-970C-13F6DA7ADE11">
+              <dmn:text>Application.monthlyIncome   </dmn:text>
+            </dmn:literalExpression>
+          </dmn:binding>
+        </dmn:invocation>
+      </dmn:contextEntry>
+    </dmn:context>
   </dmn:decision>
   <dmn:inputData id="_C4CCF718-5432-4418-BBB4-5A3C3F1CEA15" name="Loan">
     <dmn:extensionElements/>
@@ -174,6 +254,43 @@
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_B782644E-00B3-450C-86BC-41F22D5929B7">
+            <kie:width>50.0</kie:width>
+            <kie:width>175.0</kie:width>
+            <kie:width>1225.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_1904EE5B-E6DA-4756-AC07-F70EC4764987">
+            <kie:width>50.0</kie:width>
+            <kie:width>154.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>249.0</kie:width>
+            <kie:width>652.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_E4D7F5B8-CDB3-4F3F-8DF2-DADAA67341F6">
+            <kie:width>50.0</kie:width>
+            <kie:width>178.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>228.0</kie:width>
+            <kie:width>649.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_64E13047-7F74-4EEA-98A6-CF53751344C1">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>1055.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_D9875FF0-1E70-4C99-8928-D8AF9CF85B52"/>
+          <kie:ComponentWidths dmnElementRef="_5565D50E-E28D-4C7C-B5BC-3A6E112E2B48">
+            <kie:width>1055.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_383E4FF0-AD62-4606-836D-93FA8C7DACA3">
+            <kie:width>1055.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_93F58AD3-1D56-4898-A70B-E59A471E7A26">
+            <kie:width>1055.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_2D83EBC5-2EB9-46F8-970C-13F6DA7ADE11">
+            <kie:width>1055.0</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_F0669A88-D57B-4E13-970A-D639FD5E432C">
             <kie:width>50.0</kie:width>
