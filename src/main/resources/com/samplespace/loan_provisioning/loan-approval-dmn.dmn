@@ -210,7 +210,7 @@
         <dmn:variable id="_53A6589E-23A2-49BB-84C1-D9DF94CE2D99" name="Debt Ratio" typeRef="number"/>
         <dmn:invocation id="_64E13047-7F74-4EEA-98A6-CF53751344C1">
           <dmn:literalExpression id="_D9875FF0-1E70-4C99-8928-D8AF9CF85B52">
-            <dmn:text></dmn:text>
+            <dmn:text>Debt to Income</dmn:text>
           </dmn:literalExpression>
           <dmn:binding>
             <dmn:parameter id="_3E0E43F7-F20C-4982-BCE5-B0FCCDB392B7" name="lonAmount" typeRef="number"/>
