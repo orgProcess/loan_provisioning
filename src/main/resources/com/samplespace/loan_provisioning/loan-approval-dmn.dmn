@@ -275,7 +275,7 @@
       </dmn:contextEntry>
       <dmn:contextEntry>
         <dmn:literalExpression id="_09BB792B-C122-4ACC-BF29-FCA032FC5B2E">
-          <dmn:text>{"preApproval":preApprovalStatus, "reason":reasonList[item != null  ]}</dmn:text>
+          <dmn:text>{"preApproval":preApprovalStatus, "reason":reasonList[item != null]}</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
     </dmn:context>
