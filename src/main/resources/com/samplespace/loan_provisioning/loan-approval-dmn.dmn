@@ -125,9 +125,23 @@
     <dmn:extensionElements/>
     <dmn:variable id="_20DB2904-EC4B-4057-99B2-1DE66DA44A1A" name="Debt to Income" typeRef="number"/>
     <dmn:encapsulatedLogic id="_3EFE7AED-080C-43B6-8387-414FAA26A469" kind="FEEL">
-      <dmn:literalExpression id="_62256525-36D1-4293-ABF4-4664DA40407D">
-        <dmn:text></dmn:text>
-      </dmn:literalExpression>
+      <dmn:formalParameter id="_4FC3D0ED-DFB7-4317-9F63-DCFB1251D9F9" name="loanAmount" typeRef="number"/>
+      <dmn:formalParameter id="_A654412B-7A96-482B-94A8-5F4E7C6F41CC" name="loanDuration" typeRef="number"/>
+      <dmn:formalParameter id="_0236D6FC-99AF-4CFD-9BDF-23063543153A" name="monthlyIncome" typeRef="number"/>
+      <dmn:formalParameter id="_E8DFBC72-A7C2-4CDF-BF55-5A2B047133F3" name="interestRate" typeRef="number"/>
+      <dmn:context id="_F0669A88-D57B-4E13-970A-D639FD5E432C">
+        <dmn:contextEntry>
+          <dmn:variable id="_2DA91771-3C76-4CDC-844C-63925D0DE537" name="Monthly Repayment" typeRef="number"/>
+          <dmn:literalExpression id="_F9E304A6-8701-4579-87AB-56A276138817">
+            <dmn:text>((interestRate * loanAmount / 100) + loanAmount) / (loanDuration * 12)</dmn:text>
+          </dmn:literalExpression>
+        </dmn:contextEntry>
+        <dmn:contextEntry>
+          <dmn:literalExpression id="_422BF2D5-B568-4DD6-A20B-28F0AB79E26F">
+            <dmn:text>(Monthly Repayment / monthlyIncome) * 100</dmn:text>
+          </dmn:literalExpression>
+        </dmn:contextEntry>
+      </dmn:context>
     </dmn:encapsulatedLogic>
   </dmn:businessKnowledgeModel>
   <dmn:decision id="_560FF7DD-051E-4EF4-B675-1E55985DD30B" name="PreQualification">
@@ -161,8 +175,21 @@
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_62256525-36D1-4293-ABF4-4664DA40407D"/>
-          <kie:ComponentWidths dmnElementRef="_3EFE7AED-080C-43B6-8387-414FAA26A469"/>
+          <kie:ComponentWidths dmnElementRef="_F0669A88-D57B-4E13-970A-D639FD5E432C">
+            <kie:width>50.0</kie:width>
+            <kie:width>194.0</kie:width>
+            <kie:width>639.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_F9E304A6-8701-4579-87AB-56A276138817">
+            <kie:width>639.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_422BF2D5-B568-4DD6-A20B-28F0AB79E26F">
+            <kie:width>639.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_3EFE7AED-080C-43B6-8387-414FAA26A469">
+            <kie:width>50.0</kie:width>
+            <kie:width>903.0</kie:width>
+          </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="dmnshape-_5C9B5704-909D-43B8-98B5-96A0E7E3C1E6" dmnElementRef="_5C9B5704-909D-43B8-98B5-96A0E7E3C1E6" isCollapsed="false">
